@@ -11,9 +11,14 @@ class HumanPlayer:
 
     def chooseAction(self, positions):
         while True:
-            input_1 = input("Input your action: ")
-            col = input_1
-            action = (int(col))
+            input_1 = input("Input your action col:")
+            if input_1:
+                col = input_1
+                action = (0, int(col))
+            else:
+                row = 0
+                col = int(input("Input your action col:"))
+                action = (row, col)
             if action in positions:
 #will return only if chosen location is empty.
                 return action
